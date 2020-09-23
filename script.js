@@ -14,6 +14,7 @@ var thePassword = ""
  //Create a variable - the variable will be the place holder for the clients user type -
   // meaning it will store the choices the user makes while iterating through the prompted questions
 var passChoices = ""
+var passText = document.getElementById("password");
 
 
 
@@ -52,12 +53,11 @@ var passChoices = ""
     if (askLowerCase){
       passChoices += availableLetters;
     }
-  //Create a conditional statement to assure that the user has - the proper min and max length 
-  //this conditional statement will check to assure there are a in on 18 chars
-  // if (apple < 18){
-   // alert "You need a min of 18 chars"
-  //}
-
+  //loop
+  for (var i = 0; i < passwordType; i++) {
+  thePassword += passChoices[Math.floor(Math.random() * passChoices.length)]; 
+ }
+  passText.value = thePassword;
  
 
 //Begin confirming the clients desired password format - with confirm statements (variables)
@@ -72,7 +72,7 @@ var passChoices = ""
   //   askSpecialCharecters: askSpecialCharecters
   // };
 
-  return "Generated password here.";
+  return thePassword;
 }
 
 //Create a randomizer function 
