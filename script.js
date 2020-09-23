@@ -32,9 +32,13 @@ var upperCase = [
   // This statement will determine if the client  typed a number or a interger 
   if (isNaN(passwordType) === true) {
     alert('Password length must be a number')
-    prompt("How many characters would you like the password to have?")
+    var askCharacters = prompt("How many characters would you like the password to have?");
+    var askAmount = parseFloat(askCharacters.value);
+    console.log(askAmount);
   }
 
+  // var totalPercentage = parseFloat(tipPercentageInput.value);
+  // console.log("Total Price:", totalPrice);
 
   //Create a conditional statement to assure that the user has - the proper min and max length 
   //this conditional statement will check to assure there are a in on 18 chars
@@ -42,7 +46,7 @@ var upperCase = [
    // alert "You need a min of 18 chars"
   //}
 
-
+ 
 
 //Begin confirming the clients desired password format - with confirm statements (variables)
   var askSpecialCharecters = confirm("Do you want to include special characters?");
