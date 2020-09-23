@@ -12,7 +12,7 @@ var availableNumbers = "1234567890";
 var upperCase = "QWERTYUIOPASDFGHJKLZXCVBNM";
 var thePassword = ""
  //Create a variable - the variable will be the place holder for the clients user type -
-  // meaning it will store the choices the user makes while iterating through the prompted questions
+// meaning it will store the choices the user makes while iterating through the prompted questions
 var passChoices = ""
 var passText = document.getElementById("password");
 
@@ -24,11 +24,12 @@ var passText = document.getElementById("password");
     prompt("How many characters would you like the password to have?")
   );
   //Begin conditional statement - confirm that the user has typed an actual number and not an integer
-  // This statement will determine if the client  typed a number or a interger 
+  // This statement will determine if the client typed a number or a integer.
   if (isNaN(passwordType) === true) {
     var length = alert("Password length must be a number");
     return generatePassword();  
   }
+  //conditionals if user inputs a number greater than 128 or less than 8.
   if (passwordType > 128){
     alert("Password should have a max of 128 characters.");
     return generatePassword();
@@ -37,6 +38,7 @@ var passText = document.getElementById("password");
     alert("Password should have a minimum of 8 characters.");
     return generatePassword();
   }
+    //if user accepts the following prompts then the selection will be saved to the placeholder variable above.
     var askSpecialCharacters = confirm("Do you want to include special characters?");
     if (askSpecialCharacters){
       passChoices += specialCharacters;
@@ -53,62 +55,20 @@ var passText = document.getElementById("password");
     if (askLowerCase){
       passChoices += availableLetters;
     }
-  //loop
+  // for loop
   for (var i = 0; i < passwordType; i++) {
   thePassword += passChoices[Math.floor(Math.random() * passChoices.length)]; 
  }
   passText.value = thePassword;
  
 
-//Begin confirming the clients desired password format - with confirm statements (variables)
-  
-  
-
-  //store the users information 
-
-  // var opt = {
-  //   lent : lent,
-  //   apple: apple,
-  //   askSpecialCharecters: askSpecialCharecters
-  // };
-
   return thePassword;
 }
-
-//Create a randomizer function 
-//math.floor(math.random() * arr.length)
-//Grab random element from an array 
-
-
-//the formation of the password - thi is where you put all previous methods into action 
-function thisFunction () {
-  //grab users options by placing your generatePassword() in a var 
-  var yourVar = passwordFunction();
-
-  //store results 
-  var myVar = []
-
-  //possible choices and definite choices 
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
 }
 
 // Add event listener to generate button
