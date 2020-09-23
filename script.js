@@ -4,19 +4,10 @@ var availableChoices = " "
 
 
 //make each object its own array
-var availablelLetters = [
-    "q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"
-  ];
-var specialCharacters = [
-   "~","`","!","@","#","$","%","^","&","*","(",")","-","_","+","=","{","}","[","]","|","/",":",";","'","<",">",",",".","?"
-  ];
-var availableNumbers = [
-    "1","2","3","4","5","6","7","8","9","0"
-  ];
-var upperCase = [
-   "Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C","V","B","N","M"
-  ];
-
+var availablelLetters = "qwertyuiopasdfghjklzxcvbnm";
+var specialCharacters = "~`!@#$%^&*()-_+={}[]|/,:;'<>,.?";
+var availableNumbers = "1234567890";
+var upperCase = "QWERTYUIOPASDFGHJKLZXCVBNM";
 
  //This function will begin the password creation process 
  function generatePassword(){
@@ -27,22 +18,22 @@ var upperCase = [
   var passwordType = parseInt(
     prompt("How many characters would you like the password to have?")
   );
-  //Begin conditional statement - confirm that the user has typed an actual number and not an integer 
-
+  //Begin conditional statement - confirm that the user has typed an actual number and not an integer
   // This statement will determine if the client  typed a number or a interger 
   if (isNaN(passwordType) === true) {
     var length = alert('Password length must be a number')
     return generatePassword();  
   }
-  else{
+  if (passwordType > 128){
+    alert("Password should have a max of 128 characters.");
+  }
+  if (passwordType < 8){
+    alert("Password should have a minimum of 8 characters.");
+  }
     var askSpecialCharecters = confirm("Do you want to include special characters?");
     var askNumbers = confirm("Do you want to include numbers?");
     var askUpperCase = confirm("Do you want to include uppercase characters?");
     
-  }
-  // var totalPercentage = parseFloat(tipPercentageInput.value);
-  // console.log("Total Price:", totalPrice);
-
   //Create a conditional statement to assure that the user has - the proper min and max length 
   //this conditional statement will check to assure there are a in on 18 chars
   // if (apple < 18){
