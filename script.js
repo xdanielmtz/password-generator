@@ -31,12 +31,15 @@ var upperCase = [
 
   // This statement will determine if the client  typed a number or a interger 
   if (isNaN(passwordType) === true) {
-    alert('Password length must be a number')
-    var askCharacters = prompt("How many characters would you like the password to have?");
-    var askAmount = parseFloat(askCharacters.value);
-    console.log(askAmount);
+    var length = alert('Password length must be a number')
+    return generatePassword();  
   }
-
+  else{
+    var askSpecialCharecters = confirm("Do you want to include special characters?");
+    var askNumbers = confirm("Do you want to include numbers?");
+    var askUpperCase = confirm("Do you want to include uppercase characters?");
+    
+  }
   // var totalPercentage = parseFloat(tipPercentageInput.value);
   // console.log("Total Price:", totalPrice);
 
@@ -49,9 +52,6 @@ var upperCase = [
  
 
 //Begin confirming the clients desired password format - with confirm statements (variables)
-  var askSpecialCharecters = confirm("Do you want to include special characters?");
-  var askNumbers = confirm("Do you want to include numbers?");
-  var askUpperCase = confirm("Do you want to include uppercase characters?");
   
   
 
