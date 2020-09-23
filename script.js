@@ -1,9 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var availableChoices = " "
-
-
-
 
 //make each object its own variable.
 var availableLetters = "qwertyuiopasdfghjklzxcvbnm";
@@ -15,8 +11,6 @@ var thePassword = ""
 // meaning it will store the choices the user makes while iterating through the prompted questions
 var passChoices = ""
 var passText = document.getElementById("password");
-
-
 
  //This function will begin the password creation process 
  function generatePassword(){
